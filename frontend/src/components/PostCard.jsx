@@ -65,7 +65,6 @@ export default function PostCard({ post, onUpdate }) {
                 </Typography>
               </Box>
             </Box>
-            </Box>
           </Box>
 
           {/* Post text */}
