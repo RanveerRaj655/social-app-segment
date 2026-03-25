@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Feed from './pages/Feed';
 import CreatePost from './pages/CreatePost';
+import SearchResults from './pages/SearchResults';
 
 const Protected = ({ children }) => {
   const { user } = useAuth();
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/"       element={<Protected><Feed /></Protected>} />
           <Route path="/create" element={<Protected><CreatePost /></Protected>} />
+          <Route path="/search" element={<Protected><SearchResults /></Protected>} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

@@ -15,6 +15,23 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
+// Search posts
+router.get('/search', auth, async (req, res) => {
+  const { q } = req.query;
+  if (!q) return res.json({ posts: [] });
+  try {
+    const posts = await Post.find({
+      $or: [
+        { text:   { $regex: q, $options: 'i' } },
+        { author: { $regex: q, $options: 'i' } }
+      ]
+    }).sort({ createdAt: -1 });
+    res.json({ posts });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 // Get all posts (paginated)
 router.get('/', auth, async (req, res) => {
   const page  = parseInt(req.query.page)  || 1;

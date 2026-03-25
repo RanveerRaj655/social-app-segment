@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Box, Paper, TextField, Button, Typography, Avatar } from '@mui/material';
+import { Box, Paper, TextField, Button, Typography, Avatar, IconButton } from '@mui/material';
 import ImageIcon from '@mui/icons-material/Image';
+import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import api from '../api/axios';
@@ -36,7 +37,13 @@ export default function CreatePost() {
 
   return (
     <Box sx={{ maxWidth: 600, mx: 'auto', mt: 4, px: 2 }}>
-      <Paper elevation={2} sx={{ p: 3, borderRadius: 3 }}>
+      <Paper elevation={2} sx={{ p: 3, borderRadius: 3, position: 'relative' }}>
+        <IconButton
+          onClick={() => navigate('/')}
+          sx={{ position: 'absolute', top: 8, right: 8, color: 'text.secondary' }}
+        >
+          <CloseIcon />
+        </IconButton>
         <Box sx={{ display: 'flex', gap: 2, alignItems: 'flex-start', mb: 2 }}>
           <Avatar sx={{ bgcolor: '#1a1a2e' }}>{user?.username?.[0]?.toUpperCase()}</Avatar>
           <TextField

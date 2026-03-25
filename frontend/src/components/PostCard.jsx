@@ -65,18 +65,7 @@ export default function PostCard({ post, onUpdate }) {
                 </Typography>
               </Box>
             </Box>
-            <Button
-              size="small"
-              variant="contained"
-              disableElevation
-              sx={{
-                borderRadius: 5, textTransform: 'none', fontWeight: 700,
-                fontSize: 12, px: 2, py: 0.4,
-                bgcolor: '#1a1a2e', '&:hover': { bgcolor: '#2d2d4e' }
-              }}
-            >
-              Follow
-            </Button>
+            </Box>
           </Box>
 
           {/* Post text */}

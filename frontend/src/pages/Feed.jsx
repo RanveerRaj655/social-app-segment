@@ -39,7 +39,7 @@ export default function Feed() {
 
   return (
     <Box sx={{ bgcolor: '#f0f2f5', minHeight: '100vh', pb: 6 }}>
-      <Container maxWidth="sm" sx={{ pt: 2 }}>
+      <Container maxWidth="sm" sx={{ pt: 2, px: { xs: 1, sm: 2 } }}>
 
         {/* Create post box */}
         <CreatePostBox onPost={() => fetchPosts(1)} />
